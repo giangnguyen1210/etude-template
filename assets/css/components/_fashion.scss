@@ -1,0 +1,44 @@
+.fashion {
+  &__subtitle {
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    .ti-instagram {
+      line-height: 20px;
+      margin-right: 10px;
+    }
+  }
+  &__title {
+    text-align: center;
+    padding: 0 90px;
+    margin-top: 20px;
+    &--text {
+      display: inline-block;
+      font-size: 80px;
+      line-height: 1.2em;
+      font-weight: 500;
+      & img {
+        height: 70px;
+        max-width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  }
+  &__space {
+    height: 6.3vw;
+  }
+  &__content {
+    overflow: hidden;
+    &--image {
+      img {
+        width: 100%;
+      }
+      &:hover {
+        filter: brightness(80%);
+      }
+    }
+  }
+}

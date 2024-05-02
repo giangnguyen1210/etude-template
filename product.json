@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Black t-shirt",
+        "image_url": "./assets/images/product1.png",
+        "price": "40.00",
+        "discount_price": "30.00",
+        "discount_percent": "25",
+        "status": ""
+    },
+    {
+        "name": "Denim shirt",
+        "image_url": "./assets/images/product2.png",
+        "price": "50.00",
+        "discount_price": "",
+        "discount_percent": "",
+        "status": ""
+    },
+    {
+        "name": "White blouse",
+        "image_url": "./assets/images/product3.png",
+        "price": "30.00",
+        "discount_price": "",
+        "discount_percent": "",
+        "status": "out of stock"
+    },
+    {
+        "name": "Blue sweatshirt",
+        "image_url": "./assets/images/product4.png",
+        "price": "100.00",
+        "discount_price": "",
+        "discount_percent": "",
+        "status": ""
+    }
+]

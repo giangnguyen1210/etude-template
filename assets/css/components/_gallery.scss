@@ -1,0 +1,100 @@
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  &__email {
+    position: relative;
+    & p {
+      color: #f3f7f7;
+      font-size: 180px;
+      text-transform: uppercase;
+      line-height: 0.9em;
+      letter-spacing: -0.03em;
+    }
+    &--info {
+      // padding: 0vw 12vw 0vw 12vw;
+      padding: 0 28px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      bottom: 0;
+      top: 0;
+      .email {
+        &__subscribe {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          &--input {
+            border: none;
+            outline: none;
+            background: none;
+            width: 100%;
+          }
+          &--button {
+            border: none;
+            background: none;
+            width: 110px;
+          }
+        }
+      }
+      .privacy {
+        &__policy--label {
+          color: #797c7f;
+          font-size: 14px;
+          a {
+            color: #797c7f;
+          }
+        }
+      }
+    }
+  }
+  &__info {
+    position: relative;
+    &--image {
+      position: relative;
+      overflow: hidden;
+      img {
+        width: 100%;
+        filter: brightness(80%);
+        transition: transform 0.5s ease;
+      }
+      &:hover {
+        filter: brightness(70%);
+      }
+      &:hover img {
+        transform: scale(1.1); /* Phóng to hình ảnh lên 110% khi hover */
+      }
+    }
+    &--name,
+    &--link {
+      position: absolute;
+      color: $colorWhite;
+    }
+    &--name {
+      top: 54px;
+      left: 40px;
+      font-weight: 500;
+      font-size: 35px;
+      line-height: 1.12em;
+      color: #fcfcfc;
+      margin: 0;
+      text-align: left;
+    }
+    &--link {
+      top: auto;
+      right: 0;
+      bottom: 50px;
+      left: 40px;
+    }
+  }
+  .row {
+    margin: 0;
+  }
+  .col-md-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

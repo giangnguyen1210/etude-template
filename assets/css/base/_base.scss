@@ -1,0 +1,30 @@
+
+html {
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $fontFamily;
+}
+
+.main {
+  .space {
+    height: 120px;
+  }
+  // overflow: hidden;
+}
+
+.margin-auto {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+.padding-auto {
+  padding-left: 70px;
+  padding-right: 70px;
+}

@@ -58,10 +58,11 @@
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 1024px) {
   .main{
     .space{
-      height: 80px;
+      height: 60px;
     }
   }
   .margin-auto {
@@ -83,4 +84,10 @@
       }
     }
   }
+}
+
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width : 768px) {
+  
 }

@@ -42,3 +42,22 @@
     }
   }
 }
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 1024px) {
+  .fashion{
+    &__subtitle{
+      font-size: 13px;
+    }
+    &__title{
+      &--text{
+        font-size: 54px;
+        line-height: 1.2em;
+        & img {
+          height: 50px;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

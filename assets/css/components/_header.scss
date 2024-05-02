@@ -124,7 +124,8 @@
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 1024px){
   .header {
     &__navbar {
       .navbar {

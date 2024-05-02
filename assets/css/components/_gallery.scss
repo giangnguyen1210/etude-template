@@ -5,6 +5,7 @@
   overflow: hidden;
   &__email {
     position: relative;
+    margin-bottom: 60px;
     & p {
       color: #f3f7f7;
       font-size: 180px;
@@ -96,5 +97,16 @@
   .col-md-3 {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 1024px) {
+  .gallery {
+    &__email {
+      & p {
+        font-size: 120px;
+      }
+    }
   }
 }

@@ -15,10 +15,11 @@ var swiper = new Swiper(".mySwiper", {
 $(document).ready(function () {
   $(window).scroll(function () {
     var scrollHeight = 735;
+    var mainColor = '#11171CF2';
     // Kiểm tra nếu cuộn xuống dưới màn hình
     if ($(this).scrollTop() > scrollHeight) {
       // Thay đổi màu nền của header thành đen
-      $('header').css('background-color', '#11171CF2');
+      $('header').css('background-color', mainColor);
     } else {
       // Nếu không, header sẽ có màu nền trong suốt
       $('header').css('background-color', 'transparent');

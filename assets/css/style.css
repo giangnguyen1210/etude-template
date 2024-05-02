@@ -11,7 +11,7 @@ body {
 }
 
 .main .space {
-  height: 120px;
+  height: 96px;
 }
 
 .margin-auto {
@@ -65,6 +65,20 @@ body {
   filter: brightness(80%);
 }
 
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 1024px) {
+  .fashion__subtitle {
+    font-size: 13px;
+  }
+  .fashion__title--text {
+    font-size: 54px;
+    line-height: 1.2em;
+  }
+  .fashion__title--text img {
+    height: 50px;
+    max-width: 100%;
+  }
+}
 .gallery {
   display: flex;
   justify-content: center;
@@ -73,6 +87,7 @@ body {
 }
 .gallery__email {
   position: relative;
+  margin-bottom: 60px;
 }
 .gallery__email p {
   color: #f3f7f7;
@@ -160,6 +175,12 @@ body {
   padding-right: 0 !important;
 }
 
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 1024px) {
+  .gallery__email p {
+    font-size: 120px;
+  }
+}
 .header {
   position: fixed;
   height: 80px;
@@ -274,7 +295,8 @@ body {
   color: #ffffff !important;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 1024px) {
   .header__navbar .navbar__menu {
     display: none;
   }
@@ -353,9 +375,10 @@ body {
   height: 14.5vw;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 1024px) {
   .main .space {
-    height: 80px;
+    height: 60px;
   }
   .margin-auto {
     margin: 30px 30px 0px 30px;
@@ -373,6 +396,7 @@ body {
     font-size: 36px;
   }
 }
+/* Smartphones (landscape) ----------- */
 .product:hover {
   cursor: pointer;
 }
@@ -545,7 +569,7 @@ body {
   line-height: 42px;
   font-size: 16px;
   text-align: center;
-  border: 1px solid white;
+  border: 0.01px solid #ccc;
   border-radius: 50%;
   margin: 0 4px;
 }

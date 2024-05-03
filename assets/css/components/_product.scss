@@ -109,3 +109,18 @@
   }
 }
 
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width: 768px) {
+  .main {
+    .space {
+      height: 20px;
+    }
+  }
+  .product {
+    &__content {
+      &--title {
+        font-size: 26px;
+      }
+    }
+  }
+}

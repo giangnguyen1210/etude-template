@@ -59,26 +59,26 @@
 }
 
 /* iPads (portrait) ----------- */
-@media only screen and (max-width : 1024px) {
-  .main{
-    .space{
+@media only screen and (max-width: 1024px) {
+  .main {
+    .space {
       height: 60px;
     }
   }
   .margin-auto {
     margin: 30px 30px 0px 30px;
   }
-  .journey{
-    &__container{
-    margin: 0 0 0 15px;
-      &--content{
+  .journey {
+    &__container {
+      margin: 0 0 0 15px;
+      &--content {
         margin-right: 0;
       }
-      .content{
-        &__subtitle{
+      .content {
+        &__subtitle {
           font-size: 13px;
         }
-        &__title{
+        &__title {
           font-size: 36px;
         }
       }
@@ -86,8 +86,27 @@
   }
 }
 
-
 /* Smartphones (landscape) ----------- */
-@media only screen and (max-width : 768px) {
-  
+@media only screen and (max-width: 768px) {
+  .margin-auto {
+    margin: 20px 20px 0px 20px;
+  }
+  .journey {
+    &__container {
+      margin: 0;
+      .content {
+        &__title {
+          font-size: 26px;
+        }
+      }
+      &--quantity{
+        .quantity{
+          &__name{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+  }
 }

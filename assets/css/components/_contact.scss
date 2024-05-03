@@ -16,8 +16,6 @@
           /* display: inline-block; */
           padding: 0 12px;
           text-transform: capitalize;
-          font-weight: 500;
-          line-height: 50px;
         }
         & a {
           text-decoration: none;
@@ -31,7 +29,7 @@
   }
   &__divider {
     width: 100%;
-    border-block-start: 0.1px $colorWhite solid;
+    border-block-start: 1px #333 solid;
   }
   &__container {
     padding-top: 60px;
@@ -71,10 +69,55 @@
         line-height: 42px;
         font-size: 16px;
         text-align: center;
-        border:  0.01px solid #ccc;
+        border: 0.01px solid #ccc;
         border-radius: 50%;
         margin: 0 4px;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact {
+    &__header {
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+      line-height: 60px;
+      flex-wrap: wrap;
+      &--menu {
+        display: flex;
+        padding: 0;
+        font-size: 15px;
+        & > li > a {
+          padding: 0 8px;
+        }
+      }
+      ul {
+        margin-bottom: 0;
+      }
+    }
+    &__container {
+      &--address,
+      &--info,
+      &--subscribe {
+        display: flex;
+        justify-content: center;
+      }
+      &--address p {
+        text-align: center;
+      }
+    }
+    &__footer {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+  .padding-auto {
+    padding: 0 10px 0 10px;
+  }
+  .pt-5{
+    padding-top: 0 !important;
   }
 }

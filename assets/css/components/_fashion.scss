@@ -61,3 +61,24 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .fashion{
+    &__title{
+      padding: 0;
+      &--text{
+        font-size: 32px;
+        line-height: 1.2em;
+        & img {
+          height: 32px;
+          max-width: 100%;
+        }
+      }
+    }
+    &__content{
+      &--image{
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

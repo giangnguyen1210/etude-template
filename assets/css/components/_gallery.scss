@@ -95,17 +95,51 @@
     margin: 0;
   }
   .col-md-3 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 /* iPads (portrait) ----------- */
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width: 1024px) {
   .gallery {
     &__email {
       & p {
         font-size: 120px;
+      }
+    }
+    &__info{
+      &--name{
+        font-size: 22px;
+        top: 25px;
+        left: 25px;
+      }
+      &--link{
+        bottom: 25px;
+        left: 25px;
+      }
+    }
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width: 768px) {
+  .gallery {
+    &__email {
+      & p {
+        font-size: 63px;
+      }
+      &--info {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        .email {
+          &__subscribe {
+            display: flex;
+            width: 100%;
+          }
+        }
       }
     }
   }

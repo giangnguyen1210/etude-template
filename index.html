@@ -87,7 +87,10 @@
             <div class="more-btn">
               <i class="more-icon ti-layout-grid3"></i>
             </div>
-            <div href="javascript:void(0);" onclick="openMenu()" class="list-btn">
+            <div
+              href="javascript:void(0);"
+              onclick="openMenu()"
+              class="list-btn">
               <i class="list-icon ti-view-list"></i>
             </div>
           </div>
@@ -97,13 +100,30 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./assets/images/slide1.png" alt="slide1" />
+              <div class="slider__img">
+                <img src="./assets/images/slide1.png" alt="slide1" />
+                <div class="slider__img--text"><p>Elevate your style</p></div>
+                <a href="#journey" class="slider__img--scroll">
+                  <p>
+                    Scroll
+                    <span class="scroll__icon--border">
+                      <i class="ti-angle-down"></i>
+                    </span>
+                  </p>
+                </a>
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="./assets/images/slide2.png" alt="slide2" />
+              <div class="slider__img">
+                <img src="./assets/images/slide2.png" alt="slide2" />
+                <div class="slider__img--text"><p>Refresh your look</p></div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <img src="./assets/images/slide3.png" alt="slide3" />
+              <div class="slider__img">
+                <img src="./assets/images/slide3.png" alt="slide3" />
+                <div class="slider__img--text"><p>Refresh your look</p></div>
+              </div>
             </div>
           </div>
           <div class="swiper-button-next"></div>

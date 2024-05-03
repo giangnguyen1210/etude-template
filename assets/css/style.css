@@ -40,6 +40,10 @@ html {
   border-radius: 50%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .fashion__subtitle {
   letter-spacing: 1.8px;
   text-transform: uppercase;
@@ -341,20 +345,48 @@ html {
   background-color: rgba(17, 23, 28, 0.9490196078);
 }
 
-.swiper {
+.slider .swiper {
   width: 100%;
   height: 100%;
 }
-.swiper-slide {
+.slider .swiper-slide {
   background-position: center;
   background-size: cover;
 }
-.swiper-slide img {
+.slider .swiper-slide img {
   display: block;
   width: 100%;
+  min-height: 800px;
 }
-.swiper-button-next, .swiper-button-prev {
+.slider .swiper-button-next, .slider .swiper-button-prev {
   color: #ffffff;
+}
+.slider__img {
+  position: relative;
+}
+.slider__img--text {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 110px;
+  text-transform: uppercase;
+  line-height: 110px;
+}
+.slider__img--scroll {
+  position: absolute;
+  color: white;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+.slider__img--scroll .scroll__icon--border .ti-angle-down {
+  border-radius: 50%;
+  border: 0.1px solid white;
+  padding: 4px;
 }
 
 /* iPads (portrait) ----------- */
@@ -368,17 +400,17 @@ html {
   .header__navbar .navbar__icon .list-icon {
     display: inline;
   }
-  .swiper-slide {
+  .slider .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .swiper-slide img {
+  .slider .swiper-slide img {
     width: 200%;
     object-fit: contain; /* Đảm bảo hình ảnh không bị biến dạng */
     transition: transform 0.4s;
   }
-  .swiper-button-next, .swiper-button-prev {
+  .slider .swiper-button-next, .slider .swiper-button-prev {
     display: none;
   }
 }
@@ -386,6 +418,26 @@ html {
 @media only screen and (max-width: 768px) {
   .header__navbar .navbar__logo {
     padding-left: 20px;
+  }
+  .header__navbar .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(17, 23, 28, 0.9490196078); /* Replace $mainColor with your main color variable */
+    width: 100%; /* Adjust as needed */
+    padding: 10px;
+    z-index: 999;
+  }
+  .header__navbar .navbar__menu.show-submenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__navbar .navbar__menu > li:hover .menu__submenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 100px;
   }
   .header .navbar__icon {
     padding-right: 20px;
@@ -396,12 +448,12 @@ html {
   .header .navbar__icon .list-icon {
     padding: 0 10px;
   }
-  .swiper-slide img {
+  .slider .swiper-slide img {
     width: 400%;
     object-fit: contain; /* Đảm bảo hình ảnh không bị biến dạng */
     transition: transform 0.4s;
   }
-  .swiper-button-next, .swiper-button-prev {
+  .slider .swiper-button-next, .slider .swiper-button-prev {
     display: none;
   }
 }

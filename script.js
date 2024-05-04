@@ -7,10 +7,10 @@ $(document).ready(function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false
-    // }
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    }
   });
 
   let mybutton = $("#scrollToTop");
@@ -105,7 +105,7 @@ $(document).ready(function () {
     let top = $(window).scrollTop();
 
     sections.each(function () {
-      let offset = $(this).offset().top - 150;
+      let offset = $(this).offset().top - 500;
       let height = $(this).outerHeight();
       let id = $(this).attr('id');
 
@@ -122,7 +122,6 @@ $(document).ready(function () {
     } else {
       $(".header").removeClass("scroll");
     }
-
     highlightActiveSection();
   });
 });

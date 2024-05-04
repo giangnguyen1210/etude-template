@@ -393,6 +393,23 @@ a {
 @media only screen and (max-width: 1024px) {
   .header__navbar .navbar__menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(17, 23, 28, 0.9490196078); /* Replace $mainColor with your main color variable */
+    width: 100%; /* Adjust as needed */
+    padding: 10px;
+    z-index: 999;
+  }
+  .header__navbar .navbar__menu.show-submenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__navbar .navbar__menu > li:hover .menu__submenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 100px;
   }
   .header__navbar .navbar__icon .more-btn {
     display: none;

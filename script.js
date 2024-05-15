@@ -99,14 +99,17 @@ $(document).ready(function () {
   function highlightActiveSection() {
     let sections = $('#home, #journey, #gallery, #product, #fashion, #contact');
     let navLinks = $('.navbar__menu > li  a');
+    // Lấy vị trí cuộn hiện tại của trang web
     let top = $(window).scrollTop();
-
+    // Duyệt qua từng phần tử mục tiêu
     sections.each(function () {
+      // Lấy vị trí offset và chiều cao của phần tử mục tiêu
       let offset = $(this).offset().top - 500;
       let height = $(this).outerHeight();
-      let id = $(this).attr('id');
-
+      let id = $(this).attr('id'); // Lấy id của phần tử
+      // Kiểm tra xem phần tử có hiển thị trên màn hình không
       if (top >= offset && top < offset + height) {
+        // Loại bỏ class 'active' (màu) khỏi tất cả các liên kết điều hướng
         navLinks.removeClass('active');
         $('.navbar__menu > li > a[href="#' + id + '"]').addClass('active');
       }

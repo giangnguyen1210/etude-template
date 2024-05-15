@@ -1,27 +1,36 @@
 $(document).ready(function () {
   // slide 
   var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
+    // spaceBetween: 30,
     effect: "fade",
+    // effect: "cube",
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false
-    // }
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    on: {
+      slideChangeTransitionStart: function () {
+        let slides = document.querySelectorAll('.swiper-slide img');
+        slides.forEach((img) => {
+          img.style.transform = 'scale(1)';
+        });
+        let activeSlide = document.querySelector('.swiper-slide-active img');
+        activeSlide.style.transform = 'scale(1.1)';
+      },
+      slideChangeTransitionEnd: function () {
+        let activeSlide = document.querySelector('.swiper-slide-active img');
+        activeSlide.style.transform = 'scale(1.1)';
+      }
+    }
   });
   $('.more-btn').on('click', function () {
     $('#navbarRight').css('width', '388px');
   });
-
-  // $(document).on('click', function (event) {
-  //   if (!$(event.target).closest('.more-btn, #navbarRight').length) {
-  //     $('#navbarRight').css('width', '0');
-  //   }
-  // });
 
   $('#closeNavRight').on('click', function () {
     $('#navbarRight').css('width', '0');
@@ -34,16 +43,12 @@ $(document).ready(function () {
   });
 
 
-  $('.bestsellers__header--close').click(function(){
+  $('.bestsellers__header--close').click(function () {
     $('#bestsellers').removeClass('open');
     $('.tabs').removeClass('left');
     $('#overlay').removeClass('open');
   })
-  // $('#overlay').click(function() {
-  //   $('#bestsellers').removeClass('open');
-  //   $('#tabs').removeClass('open');
-  //   $(this).removeClass('open');
-  // });
+  
   // button scroll to top
   let mybutton = $("#scrollToTop");
 
@@ -114,7 +119,7 @@ $(document).ready(function () {
     $(this).siblings('.tabs__folder--left').removeClass('show');
   });
 
- 
+
 
 });
 

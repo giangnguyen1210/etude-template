@@ -1,0 +1,153 @@
+.tabs {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 1002;
+  bottom: auto;
+  transform: translateY(-50%);
+  color: $colorWhite;
+  //   height: 100vh;
+  &__cart,
+  &__image,
+  &__folder {
+    display: flex;
+    justify-content: flex-end;
+
+    &--right {
+      width: 68px;
+      height: 60px;
+      background-color: $thirdColor;
+      margin-bottom: 1px;
+      font-size: 20px;
+      padding: 16px 24px;
+      text-transform: uppercase;
+    }
+    &--left {
+      display: none;
+      margin-bottom: 1px;
+      padding: 20px 24px;
+      font-size: 12px;
+      background-color: $mainColor;
+      text-transform: uppercase;
+      opacity: 0; /* Bắt đầu với độ mờ là 0 */
+      transition: opacity 1s ease, transform 0.3s ease;
+      transform: translateX(100%);
+      &.show {
+        display: flex;
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+.bestsellers {
+  height: 100vh;
+  width: 337px;
+  transform: translateX(337px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $colorWhite;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: 0.5s;
+  z-index: 1002;
+  &.open {
+    width: 337px;
+    transform: translateX(0);
+  }
+  &__header,
+  &__content {
+    padding: 0 16px 0 30px;
+  }
+  &__header {
+    &--close {
+      padding-top: 10px;
+      font-size: 20px;
+      text-align: end;
+      .close-button {
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        border-radius: 50%;
+        transition: transform 0.6s ease-in-out;
+        &:hover {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    &--text {
+      text-align: center;
+      font-size: 22px;
+      padding-top: 50px;
+      font-weight: 500;
+    }
+  }
+  &__content {
+    &--wrapper {
+      padding-top: 20px;
+    }
+    &--image {
+      & img {
+        width: 100%;
+        height: 155px;
+      }
+    }
+    &--text {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      font-size: 12px;
+      & .title {
+        & .description {
+          color: $colorGrey;
+        }
+        & .name {
+          font-weight: bold;
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+      & .price {
+        .discount {
+          text-decoration: line-through;
+          color: $colorGrey;
+        }
+      }
+    }
+  }
+  &__footer {
+    padding-top: 20px;
+    & .sale {
+      background-color: #afbea9;
+      color: $colorWhite;
+      padding: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+}
+
+.tabs.left {
+  transition: 0.5s;
+  right: 337px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75); /* Màu nền với độ mờ */
+  z-index: 999;
+  display: none;
+  z-index: 1001;
+  transition: opacity 0.5s;
+  &.open {
+    display: block;
+    opacity: 1;
+  }
+}

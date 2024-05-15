@@ -44,15 +44,25 @@
         color: $colorWhite;
         text-decoration: none;
       }
+      display: flex;
+      flex-direction: column;
+      .phone {
+        padding-bottom: 4px;
+      }
+      .email {
+        text-decoration: underline white;
+        text-underline-offset: 8px;
+      }
     }
-    &--subscribe p {
-      text-align: right;
+    &--subscribe {
+      text-align: end;
     }
   }
   &__footer {
     display: flex;
     justify-content: space-between;
     color: $colorWhite;
+
     &--copyright {
       line-height: 45px;
     }
@@ -66,7 +76,7 @@
         overflow: hidden;
         width: 45px;
         height: 45px;
-        line-height: 42px;
+        line-height: 45px;
         font-size: 16px;
         text-align: center;
         border: 0.01px solid #ccc;
@@ -77,11 +87,11 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .contact {
     &__header {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       padding-top: 50px;
       line-height: 60px;
       flex-wrap: wrap;
@@ -98,26 +108,74 @@
       }
     }
     &__container {
+      padding-top: 0;
       &--address,
       &--info,
       &--subscribe {
         display: flex;
         justify-content: center;
+        padding-top: 18px;
       }
       &--address p {
         text-align: center;
+      }
+      &--info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      &--subscribe {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        & p {
+          margin-bottom: 0;
+          padding-bottom: 4px;
+        }
+      }
+      &--address {
+        & p {
+          margin-bottom: 0;
+        }
+        color: #d2d3d5;
       }
     }
     &__footer {
       display: flex;
       justify-content: space-around;
-      flex-wrap: wrap;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      &--icon {
+        .ti-facebook,
+        .ti-instagram,
+        .ti-twitter,
+        .ti-dribbble {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 14px;
+        }
+      }
     }
   }
   .padding-auto {
     padding: 0 10px 0 10px;
   }
-  .pt-5{
+  .pt-5 {
     padding-top: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .contact {
+    &__header {
+      &--menu {
+        font-size: 13px;
+        & > li > a {
+          padding: 0 4px;
+        }
+      }
+    }
   }
 }

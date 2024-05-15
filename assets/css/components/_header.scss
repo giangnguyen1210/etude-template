@@ -27,7 +27,7 @@
     position: relative;
     & > li {
       display: inline-block;
-      line-height: 80px;
+      // line-height: 80px;
 
       & > a {
         color: #fff;
@@ -35,10 +35,10 @@
         padding: 0 12px;
         text-transform: capitalize;
         font-weight: 500;
-        line-height: 80px;
+        // line-height: 80px;
         &.active {
-          background-color: $thirdColor;
-          text-decoration: underline white;
+          color: $thirdColor;
+          text-decoration: underline $thirdColor;
           text-underline-offset: 6px;
         }
       }
@@ -48,8 +48,9 @@
       &:hover .menu__submenu {
         display: block;
       }
-      &:hover {
-        text-decoration: underline white;
+      & > a:hover {
+        color: $thirdColor;
+        text-decoration: underline $thirdColor;
         text-underline-offset: 6px;
       }
     }
@@ -96,6 +97,7 @@
     .search-icon,
     .more-icon,
     .cart-icon,
+    .close-icon,
     .list-icon {
       padding: 0 20px;
       font-size: 20px;
@@ -107,20 +109,20 @@
   }
 }
 
+.mobile__tablet {
+  display: none;
+}
 .scroll {
   background-color: $mainColor;
 }
 .slider {
   .swiper {
     width: 100%;
-    height: 100%;
     &-slide {
-      background-position: center;
-      background-size: cover;
       & img {
-        display: block;
         width: 100%;
-        min-height: 800px;
+        // height: auto;
+        height: 100vh;
       }
     }
     &-button {
@@ -163,30 +165,105 @@
   }
 }
 
+.navbar__right {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #11171C;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: 0.5s;
+  // padding: 30px 0 0 50px;
+  z-index: 1000;
+  &--container {
+    padding: 30px 0 0 50px;
+    position: relative;
+    & .logo img {
+      width: 100px;
+    }
+    & .social__contact {
+      padding-top: 200px;
+      &--facebook,
+      &--twitter,
+      &--dribbble,
+      &--instagram {
+        padding-top: 24px;
+        & span {
+          padding-left: 10px;
+        }
+      }
+    }
+    & .close {
+      color: $colorWhite;
+      position: absolute;
+      top: 25px;
+      right: 50px;
+      border-radius: 50%;
+      padding: 10px 14px;
+      background: #333;
+      transition: transform 0.6s ease-in-out;
+      &:hover{
+        transform: rotate(180deg);
+      }
+    }
+    & .footer{
+      padding-top: 200px;
+      &__divider {
+        width: 86%;
+        border-block-start: 1px #333 solid;
+      }
+      &__contact{
+        & .phone{
+          font-size: 24px;
+        }
+        & .email{
+          font-size: 17px;
+        }
+        display: flex;
+        padding-top: 20px;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
 /* iPads (portrait) ----------- */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   .header {
+    position: absolute;
     &__navbar {
       .navbar {
         &__menu {
-          display: none;
+          display: flex;
           position: absolute;
           top: 100%;
+          height: 1000vh;
           left: 0;
-          background-color: $mainColor; /* Replace $mainColor with your main color variable */
-          width: 100%; /* Adjust as needed */
-          padding: 10px;
+          background-color: $mainColor;
+          width: 100%;
+          padding: 0 50px;
           z-index: 999;
-
+          transform: translateY(-120%);
+          transition: transform 1s ease-out, opacity 1s ease-out;
+          flex-direction: column;
+          line-height: 60px;
           &.show-submenu {
             display: flex;
             flex-direction: column;
+            transform: translateY(0);
           }
           & > li:hover .menu__submenu {
-            display: block;
-            position: absolute;
-            top: 20px;
-            left: 100px;
+            // display: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+          }
+
+          & li a {
+            line-height: 60px;
           }
         }
         &__icon {
@@ -196,20 +273,34 @@
           .list-icon {
             display: inline;
           }
+          .close-btn {
+            display: none;
+          }
         }
       }
     }
+    .navbar__menu > li {
+      max-width: 300px;
+    }
   }
+  .header {
+    display: none;
+  }
+
+  .mobile__tablet {
+    display: block;
+    // height: 500px;
+  }
+
   .slider {
     .swiper {
       &-slide {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         & img {
-          width: 200%;
-          object-fit: contain; /* Đảm bảo hình ảnh không bị biến dạng */
-          transition: transform 0.4s;
+          min-height: 100vh; /* Chiều cao bằng chiều cao viewport */
+          object-fit: cover;
         }
       }
       &-button {
@@ -224,13 +315,14 @@
 /* Smartphones (landscape) ----------- */
 @media only screen and (max-width: 768px) {
   .header {
+    position: absolute;
     &__navbar {
       .navbar {
         &__logo {
           padding-left: 20px;
         }
         &__menu {
-          display: none;
+          display: flex;
           position: absolute;
           top: 100%;
           left: 0;
@@ -238,16 +330,23 @@
           width: 100%; /* Adjust as needed */
           padding: 10px;
           z-index: 999;
+          transform: translateY(-120%);
+          transition: transform 1s ease-out, opacity 1s ease-out;
+          flex-direction: column;
+          height: 100vh; /* Adjusted height */
+          overflow-y: auto; /* Added overflow */
 
           &.show-submenu {
             display: flex;
             flex-direction: column;
+            transform: translateY(0);
           }
           & > li:hover .menu__submenu {
-            display: block;
-            position: absolute;
-            top: 20px;
-            left: 100px;
+            // display: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
           }
         }
       }
@@ -257,8 +356,16 @@
       .search-icon,
       .more-icon,
       .cart-icon,
+      .close-icon,
       .list-icon {
         padding: 0 10px;
+      }
+
+      .close-btn {
+        transition: transform 0.5s ease-out;
+        :hover{
+          transform: rotate(360deg);
+        }
       }
     }
   }
@@ -266,9 +373,9 @@
     .swiper {
       &-slide {
         & img {
-          width: 400%;
-          object-fit: contain; /* Đảm bảo hình ảnh không bị biến dạng */
-          transition: transform 0.4s;
+          // width: 400%;
+          height: 100vh; /* Chiều cao bằng chiều cao viewport */
+          object-fit: cover;
         }
       }
       &-button {
@@ -278,5 +385,36 @@
         }
       }
     }
+    &__img {
+      &--text {
+        font-size: 64px;
+        line-height: 64px;
+      }
+    }
   }
+}
+
+@media only screen and (max-width: 321px) {
+  .slider {
+    &__img {
+      &--text {
+        font-size: 50px;
+        line-height: 50px;
+        min-width: 286px;
+      }
+    }
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate360 0.5s ease-out; /* Định nghĩa thời gian và kiểu animation */
 }

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // slide 
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     effect: "fade",
@@ -7,15 +8,47 @@ $(document).ready(function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false
-    }
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false
+    // }
+  });
+  $('.more-btn').on('click', function () {
+    $('#navbarRight').css('width', '388px');
   });
 
+  // $(document).on('click', function (event) {
+  //   if (!$(event.target).closest('.more-btn, #navbarRight').length) {
+  //     $('#navbarRight').css('width', '0');
+  //   }
+  // });
+
+  $('#closeNavRight').on('click', function () {
+    $('#navbarRight').css('width', '0');
+  })
+
+  $('#tabsBestsellers').click(function () {
+    $('#bestsellers').toggleClass('open');
+    $('.tabs').toggleClass('left');
+    $('#overlay').toggleClass('open');
+  });
+
+
+  $('.bestsellers__header--close').click(function(){
+    $('#bestsellers').removeClass('open');
+    $('.tabs').removeClass('left');
+    $('#overlay').removeClass('open');
+  })
+  // $('#overlay').click(function() {
+  //   $('#bestsellers').removeClass('open');
+  //   $('#tabs').removeClass('open');
+  //   $(this).removeClass('open');
+  // });
+  // button scroll to top
   let mybutton = $("#scrollToTop");
 
   $(window).scroll(function () {
+    // nếu scroll high > 100 thì hiển thị button scroll to top
     if ($(this).scrollTop() > 100) {
       mybutton.css("display", "block");
     } else {
@@ -23,73 +56,10 @@ $(document).ready(function () {
     }
   });
 
+  // click vào button thì cuộn lên đầu trang thời gian cuộn 0.5s
   mybutton.click(function () {
-    $("body,html").animate({ scrollTop: 0 }, 500);
+    $("body,html").animate({ scrollTop: 0 }, 0);
     return false;
-  });
-
-  $.getJSON("product.json", function (data) {
-    let outputDiv = $("#product-info");
-    let productsHTML = '';
-
-    $.each(data, function (index, product) {
-      productsHTML += `
-        <div class="col-xl-3 col-md-6">
-          <div class="product__info">
-            <div class="product__info--image">
-              <img src="${product.image_url}" alt="${product.name}">
-              ${product.discount_percent ? `<span class="onsale">-${product.discount_percent}%</span>` : ''}
-              ${product.status === 'out of stock' ? `<span class="stock">${product.status}</span>` : ''}
-              <span class="wishlist">
-                <i class="ti-heart"></i>
-              </span>
-              <div class="info__bottom">
-                <div class="info__bottom--quick-view">
-                  <i class="ti-eye"></i>
-                  Quick view
-                </div>
-                <div class="info__bottom--add-cart">
-                  <i class="ti-shopping-cart"></i>
-                  Add to cart
-                </div>
-              </div>
-            </div>
-            <div class="product__info--name">
-              ${product.name}
-            </div>
-            <div class="product__info--price">
-              ${product.discount_price ? `<span class="product__info--discount text-decoration-line-through">$${product.price}</span>` : ''}
-              <span class="product__info--cost">$${product.discount_price || product.price}</span>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-
-    outputDiv.html(productsHTML);
-  });
-
-  $.getJSON("gallery.json", function (data) {
-    let outputDiv = $("#gallery-info");
-    let galleryHTML = '';
-
-    $.each(data, function (index, gall) {
-      galleryHTML += `
-        <div class="col-md-3 gallery__info">
-          <div class="gallery__info--image">
-            <img src="${gall.image_url}" alt="${gall.name}" />
-          </div>
-          <div class="gallery__info--name">
-            ${gall.name}
-          </div>
-          <div class="gallery__info--link">
-            View all <i class="ti-arrow-right"></i>
-          </div>
-        </div>
-      `;
-    });
-
-    outputDiv.html(galleryHTML);
   });
 
   var menuItems = $('.navbar__menu > li a');
@@ -97,6 +67,14 @@ $(document).ready(function () {
   menuItems.on('click', function () {
     menuItems.removeClass('active');
     $(this).addClass('active');
+
+    var target = $(this).attr('href');
+    var targetOffset = $(target).offset().top;
+
+    // Animate the scroll to the target section
+    $('html, body').animate({
+      scrollTop: targetOffset
+    }, 0);
   });
 
   function highlightActiveSection() {
@@ -124,16 +102,50 @@ $(document).ready(function () {
     }
     highlightActiveSection();
   });
+  $('.tabs__cart--right, .tabs__image--right, .tabs__folder--right').mouseenter(function () {
+    $(this).siblings('.tabs__cart--left').addClass('show');
+    $(this).siblings('.tabs__image--left').addClass('show');
+    $(this).siblings('.tabs__folder--left').addClass('show');
+  });
+
+  $('.tabs__cart--right, .tabs__image--right, .tabs__folder--right').mouseleave(function () {
+    $(this).siblings('.tabs__cart--left').removeClass('show');
+    $(this).siblings('.tabs__image--left').removeClass('show');
+    $(this).siblings('.tabs__folder--left').removeClass('show');
+  });
+
+ 
+
 });
 
 
 // Function to toggle submenu when list-btn is clicked
 $(".list-btn").click(function () {
   $(".navbar__menu").toggleClass("show-submenu");
+  $(".cart-btn, .search-btn, .list-btn").hide(); // Ẩn các icon khác
+  $(".close-btn").show();
+  $(".mobile__tablet").toggleClass("main-color");
 });
+
+$(".close-btn").click(function () {
+  $(".navbar__menu").removeClass("show-submenu");
+  $(".close-btn").hide();
+  $(".cart-btn, .search-btn, .list-btn").show(); // Ẩn các icon khác
+  $(".mobile__tablet").removeClass("main-color");
+
+  var $closeIcon = $('.close-icon');
+  $closeIcon.addClass('rotate');
+
+  // Loại bỏ lớp 'rotate' sau khi animation kết thúc để có thể click nhiều lần
+  setTimeout(function () {
+    $closeIcon.removeClass('rotate');
+  }, 2); // Thời gian này phải khớp với thời gian animation
+})
 
 // Function to toggle submenu when a menu item is clicked
 $(".navbar__menu > li > a").click(function () {
   $(this).toggleClass("active");
   $(this).next(".menu__submenu").toggleClass("show");
 });
+
+

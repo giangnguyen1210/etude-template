@@ -44,7 +44,6 @@
       .privacy {
         &__policy--label {
           color: #797c7f;
-          font-size: 14px;
           a {
             color: #797c7f;
           }
@@ -101,7 +100,7 @@
 }
 
 /* iPads (portrait) ----------- */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   .gallery {
     &__email {
       & p {
@@ -127,7 +126,7 @@
   .gallery {
     &__email {
       & p {
-        font-size: 63px;
+        font-size: 60px;
       }
       &--info {
         padding: 0;
@@ -144,3 +143,22 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 321px) {
+  .gallery {
+    
+    &__email {
+      & p {
+        font-size: 50px;
+      }
+      &--info{
+        font-size: 12px;
+      }
+    }
+  }
+  .privacy__policy--label{
+    font-size: 12px;
+  }
+}
+

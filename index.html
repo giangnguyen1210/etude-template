@@ -14,6 +14,175 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <div class="tabs">
+      <div class="tabs__cart">
+        <div class="tabs__cart--left">Buy Theme</div>
+        <div class="tabs__cart--right">
+          <i class="ti-shopping-cart"></i>
+        </div>
+      </div>
+      <div class="tabs__image">
+        <div class="tabs__image--left">Our bestsellers</div>
+        <div class="tabs__image--right" id="tabsBestsellers">
+          <i class="ti-image"></i>
+        </div>
+      </div>
+      <div class="tabs__folder">
+        <div class="tabs__folder--left">Hide Panel</div>
+        <div class="tabs__folder--right">
+          <i class="ti-folder"></i>
+        </div>
+      </div>
+    </div>
+    <div class="bestsellers" id="bestsellers">
+      <div class="bestsellers__header">
+        <div class="bestsellers__header--close">
+          <div class="close-button">
+            <i class="close-icon ti-close"></i>
+          </div>
+        </div>
+        <div class="bestsellers__header--text">Our Bestsellers</div>
+      </div>
+      <div class="bestsellers__content">
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller1" src="./assets/images/bestseller1.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller2" src="./assets/images/bestseller2.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller3" src="./assets/images/bestseller3.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller4" src="./assets/images/bestseller4.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller5" src="./assets/images/bestseller5.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller6" src="./assets/images/bestseller6.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers__content--wrapper">
+          <div class="bestsellers__content--image">
+            <img alt="bestseller7" src="./assets/images/bestseller7.png" />
+          </div>
+          <div class="bestsellers__content--text">
+            <div class="title">
+              <p class="name">Qwery</p>
+              <p class="description">
+                <span>Bestsellers</span>
+                <span>Business</span>
+                <span>News / Editorial</span>
+              </p>
+            </div>
+            <p class="price">
+              <span class="discount">$75</span>
+              <span class="cost">$59</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bestsellers__footer">
+        <div class="sale">Sale</div>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
     <div class="main">
       <header class="header">
         <div class="header__navbar">
@@ -78,24 +247,132 @@
             </li>
           </ul>
           <div class="navbar__icon">
-            <div class="cart-btn">
-              <i class="cart-icon ti-shopping-cart"></i>
-            </div>
-            <div class="search-btn">
-              <i class="search-icon ti-search"></i>
-            </div>
             <div class="more-btn">
               <i class="more-icon ti-layout-grid3"></i>
             </div>
-            <div
-              href="javascript:void(0);"
-              onclick="openMenu()"
-              class="list-btn">
+            <div class="list-btn">
               <i class="list-icon ti-view-list"></i>
             </div>
           </div>
         </div>
       </header>
+      <header class="header mobile__tablet">
+        <div class="header__navbar">
+          <div class="navbar__logo">
+            <img src="assets/images/logo.png" alt="logo" />
+          </div>
+          <ul class="navbar__menu">
+            <li>
+              <a href="#home">Home</a>
+              <ul class="menu__submenu">
+                <li><a href="">Creative Agency</a></li>
+                <li><a href="">Digital Marketing</a></li>
+                <li><a href="">Online Store</a></li>
+                <li><a href="">Design Agency</a></li>
+                <li><a href="">Portfolio Showcase</a></li>
+                <li><a href="">Horizontal Scroll</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#journey">Journey</a>
+              <ul class="menu__submenu">
+                <li><a href="">About</a></li>
+                <li><a href="">Our Service</a></li>
+                <li><a href="">Our Process</a></li>
+                <li><a href="">Press & Awards</a></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">Pricing</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#product">Product</a>
+              <ul class="menu__submenu">
+                <li><a href="">Masonry</a></li>
+                <li><a href="">Side Title</a></li>
+                <li><a href="">According Horizontal</a></li>
+                <li><a href="">Horizontal Scroll</a></li>
+                <li><a href="">Single Project</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#gallery">Gallery</a>
+              <ul class="menu__submenu">
+                <li><a href="">Standard</a></li>
+                <li><a href="">List</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Single Post</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#fashion">Fashion</a>
+              <ul class="menu__submenu">
+                <li><a href="">Product List</a></li>
+                <li><a href="">Product Single</a></li>
+                <li><a href="">Card</a></li>
+                <li><a href="">Checkout</a></li>
+                <li><a href="">Wishing List</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+          <div class="navbar__icon">
+            <div class="list-btn">
+              <i class="list-icon ti-view-list"></i>
+            </div>
+            <div id="btnClose" class="close-btn">
+              <i class="close-icon ti-close"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="navbarRight" class="navbar__right">
+        <!-- Nội dung của navbar -->
+        <div class="navbar__right--container">
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="logo" />
+          </div>
+          <div class="social__contact">
+            <div class="social__contact--facebook">
+              <a href="https://www.facebook.com">
+                <i class="ti-facebook"></i>
+                <span>Facebook</span>
+              </a>
+            </div>
+            <div class="social__contact--twitter">
+              <a href="https://www.twitter.com">
+                <i class="ti-twitter"></i>
+                <span>Twitter</span>
+              </a>
+            </div>
+            <div class="social__contact--dribbble">
+              <a href="https://www.dribbble.com">
+                <i class="ti-dribbble"></i>
+                <span>Dribbble</span>
+              </a>
+            </div>
+            <div class="social__contact--instagram">
+              <a href="https://www.instagram.com">
+                <i class="ti-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+          <div class="close" id="closeNavRight">
+              <i class="close-icon ti-close"></i>
+          </div>
+
+          <div class="footer">
+            <div class="footer__divider"></div>
+            <div class="footer__contact">
+              <a href="tel:+18408412569" class="phone">+1 840 841 25 69</a>
+              <a href="mailto:info@email.com" class="email">info@email.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="home" class="slider">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
@@ -116,20 +393,6 @@
             <div class="swiper-slide">
               <div class="slider__img">
                 <img src="./assets/images/slide2.png" alt="slide2" />
-                <div class="slider__img--text"><p>Refresh your look</p></div>
-                <a href="#journey" class="slider__img--scroll">
-                  <p>
-                    Scroll
-                    <span class="scroll__icon--border">
-                      <i class="ti-angle-down"></i>
-                    </span>
-                  </p>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slider__img">
-                <img src="./assets/images/slide3.png" alt="slide3" />
                 <div class="slider__img--text"><p>Refresh your look</p></div>
                 <a href="#journey" class="slider__img--scroll">
                   <p>
@@ -209,7 +472,114 @@
             Latest products
           </div>
         </div>
-        <div class="row mt-5" id="product-info"></div>
+        <div class="row mt-5" id="product-info">
+          <div class="col-xl-3 col-md-6">
+            <div class="product__info">
+              <div class="product__info--image">
+                <img src="./assets/images/product1.png" alt="Black t-shirt" />
+                <span class="onsale">-25%</span>
+
+                <span class="wishlist">
+                  <i class="ti-heart"></i>
+                </span>
+                <div class="info__bottom">
+                  <div class="info__bottom--quick-view">
+                    <i class="ti-eye"></i>
+                    Quick view
+                  </div>
+                  <div class="info__bottom--add-cart">
+                    <i class="ti-shopping-cart"></i>
+                    Add to cart
+                  </div>
+                </div>
+              </div>
+              <div class="product__info--name">Black t-shirt</div>
+              <div class="product__info--price">
+                <span
+                  class="product__info--discount text-decoration-line-through"
+                  >$40.00</span
+                >
+                <span class="product__info--cost">$30.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="product__info">
+              <div class="product__info--image">
+                <img src="./assets/images/product2.png" alt="Denim shirt" />
+
+                <span class="wishlist">
+                  <i class="ti-heart"></i>
+                </span>
+                <div class="info__bottom">
+                  <div class="info__bottom--quick-view">
+                    <i class="ti-eye"></i>
+                    Quick view
+                  </div>
+                  <div class="info__bottom--add-cart">
+                    <i class="ti-shopping-cart"></i>
+                    Add to cart
+                  </div>
+                </div>
+              </div>
+              <div class="product__info--name">Denim shirt</div>
+              <div class="product__info--price">
+                <span class="product__info--cost">$50.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="product__info">
+              <div class="product__info--image">
+                <img src="./assets/images/product3.png" alt="White blouse" />
+
+                <span class="stock">out of stock</span>
+                <span class="wishlist">
+                  <i class="ti-heart"></i>
+                </span>
+                <div class="info__bottom">
+                  <div class="info__bottom--quick-view">
+                    <i class="ti-eye"></i>
+                    Quick view
+                  </div>
+                  <div class="info__bottom--add-cart">
+                    <i class="ti-shopping-cart"></i>
+                    Add to cart
+                  </div>
+                </div>
+              </div>
+              <div class="product__info--name">White blouse</div>
+              <div class="product__info--price">
+                <span class="product__info--cost">$30.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="product__info">
+              <div class="product__info--image">
+                <img src="./assets/images/product4.png" alt="Blue sweatshirt" />
+
+                <span class="wishlist">
+                  <i class="ti-heart"></i>
+                </span>
+                <div class="info__bottom">
+                  <div class="info__bottom--quick-view">
+                    <i class="ti-eye"></i>
+                    Quick view
+                  </div>
+                  <div class="info__bottom--add-cart">
+                    <i class="ti-shopping-cart"></i>
+                    Add to cart
+                  </div>
+                </div>
+              </div>
+              <div class="product__info--name">Blue sweatshirt</div>
+              <div class="product__info--price">
+                <span class="product__info--cost">$100.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="space"></div>
       <div id="gallery" class="gallery">
@@ -239,12 +609,49 @@
             </div>
           </div>
         </div>
-        <div class="row" id="gallery-info"></div>
+        <div class="row" id="gallery-info">
+          <div class="col-md-3 gallery__info">
+            <div class="gallery__info--image">
+              <img src="./assets/images/gallery1.png" alt="Casual couture" />
+            </div>
+            <div class="gallery__info--name">Casual couture</div>
+            <div class="gallery__info--link">
+              View all <i class="ti-arrow-right"></i>
+            </div>
+          </div>
+          <div class="col-md-3 gallery__info">
+            <div class="gallery__info--image">
+              <img src="./assets/images/gallery2.png" alt="Modern muse" />
+            </div>
+            <div class="gallery__info--name">Modern muse</div>
+            <div class="gallery__info--link">
+              View all <i class="ti-arrow-right"></i>
+            </div>
+          </div>
+          <div class="col-md-3 gallery__info">
+            <div class="gallery__info--image">
+              <img src="./assets/images/gallery3.png" alt="Ethnic Essence" />
+            </div>
+            <div class="gallery__info--name">Ethnic Essence</div>
+            <div class="gallery__info--link">
+              View all <i class="ti-arrow-right"></i>
+            </div>
+          </div>
+          <div class="col-md-3 gallery__info">
+            <div class="gallery__info--image">
+              <img src="./assets/images/gallery4.png" alt="Minimal luxe" />
+            </div>
+            <div class="gallery__info--name">Minimal luxe</div>
+            <div class="gallery__info--link">
+              View all <i class="ti-arrow-right"></i>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="space"></div>
       <div id="fashion" class="fashion margin-auto">
-        <div class="fashion__subtitle d-flex justify-content-center">
-          CRAFTED FOR YOUR DISTINCTIVE FASHION
+        <div class="fashion__subtitle">
+          <p>Crafted for your distinctive fashion</p>
         </div>
         <div class="fashion__title">
           <span class="fashion__title--text">
@@ -262,22 +669,22 @@
           <i class="ti-instagram"></i> Instagram
         </div>
         <div class="row fashion__content mt-5">
-          <div class="col-md-2 col-6 fashion__content--image">
+          <div class="col-12 col-md-2 col-custom fashion__content--image">
             <img src="./assets/images/fashion5.png" alt="fashion5" />
           </div>
-          <div class="col-md-2 col-6 fashion__content--image">
+          <div class="col-12 col-md-2 col-custom fashion__content--image">
             <img src="./assets/images/fashion6.png" alt="fashion5" />
           </div>
-          <div class="col-md-2 col-6 fashion__content--image">
+          <div class="col-12 col-md-2 col-custom fashion__content--image">
             <img src="./assets/images/fashion7.png" alt="fashion5" />
           </div>
-          <div class="col-md-2 col-6 fashion__content--image">
+          <div class="col-12 col-md-2 col-custom fashion__content--image">
             <img src="./assets/images/fashion8.png" alt="fashion5" />
           </div>
-          <div class="col-md-2 col-6 fashion__content--image">
+          <div class="col-12 col-md-2 col-custom fashion__content--image">
             <img src="./assets/images/fashion9.png" alt="fashion5" />
           </div>
-          <div class="col-md-2 col-6 fashion__content--image">
+          <div class="col-12 col-md-2 col-custom fashion__content--image">
             <img src="./assets/images/fashion10.png" alt="fashion5" />
           </div>
         </div>
@@ -299,18 +706,14 @@
       </div>
       <div class="contact__divider pb-2"></div>
       <div class="row contact__container">
-        <div class="col-md-4 contact__container--address">
+        <div class="col-12 col-md-4 contact__container--address">
           <p>Germany — 785 15h Street, Office 478 Berlin, De 81566</p>
         </div>
-        <div class="col-md-4 contact__container--info">
-          <div>
-            <a href="tel:+18408412569">+1 840 841 25 69</a>
-          </div>
-          <div>
-            <a href="mailto:info@email.com">info@email.com</a>
-          </div>
+        <div class="col-12 col-md-4 contact__container--info">
+          <a href="tel:+18408412569" class="phone">+1 840 841 25 69</a>
+          <a href="mailto:info@email.com" class="email">info@email.com</a>
         </div>
-        <div class="col-md-4 contact__container--subscribe">
+        <div class="col-12 col-md-4 contact__container--subscribe">
           <p>Get Fresh updates.</p>
           <p>Just Subscribe</p>
         </div>
@@ -320,16 +723,26 @@
           <p>ThemeREX © 2024. All rights reserved.</p>
         </div>
         <div class="contact__footer--icon">
-          <span><i class="ti-facebook"></i></span>
-          <span><i class="ti-twitter"></i></span>
-          <span><i class="ti-dribbble"></i></span>
-          <span><i class="ti-instagram"></i></span>
+          <a href="https://www.facebook.com">
+            <span><i class="ti-facebook"></i></span>
+          </a>
+          <a href="https://www.twitter.com">
+            <span><i class="ti-twitter"></i></span>
+          </a>
+          <a href="https://www.dribbble.com">
+            <span><i class="ti-dribbble"></i></span>
+          </a>
+          <a href="https://www.instagram.com">
+            <span><i class="ti-instagram"></i></span>
+          </a>
         </div>
       </div>
     </footer>
+
     <button onclick="topFunction()" id="scrollToTop" title="Go to top">
       <div class="ti-arrow-up"></div>
     </button>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

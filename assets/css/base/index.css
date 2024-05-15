@@ -1,43 +1,38 @@
-@import "./variable";
+@charset "UTF-8";
 html {
-  font-family: halyard-display,sans-serif;
+  font-family: halyard-display, sans-serif;
 }
+
 html, body, .swiper-container, .swiper-wrapper, .swiper-slide {
   height: 100%;
   margin: 0;
   padding: 0;
-
 }
+
 html, body {
   height: 200%; /* Đảm bảo có đủ nội dung để cuộn */
 }
 
-html{
+html {
   overflow-x: hidden;
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-
 }
 
-body {
-  // overflow-x: hidden;
-}
-
-.main {
-  .space {
-    height: 96px;
-  }
-  // overflow: hidden;
+.main .space {
+  height: 96px;
 }
 
 .margin-auto {
   margin-left: 70px;
   margin-right: 70px;
 }
+
 .padding-auto {
   padding-left: 58px;
   padding-right: 58px;
@@ -59,23 +54,24 @@ body {
   border-radius: 50%;
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
 }
+
 .main-color {
-  background-color: #11171CF2 !important; /* Sử dụng màu chính từ Sass */
+  background-color: rgba(17, 23, 28, 0.9490196078) !important; /* Sử dụng màu chính từ Sass */
 }
 
 @media (max-width: 320px) {
   .col-custom {
-      flex: 0 0 100%;
-      max-width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .col-custom {
-      flex: 0 0 50%;
-      max-width: 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
-}
+}/*# sourceMappingURL=index.css.map */

@@ -420,6 +420,7 @@ a {
 }
 .slider .swiper-button-next, .slider .swiper-button-prev {
   color: #ffffff;
+  padding: 0 80px;
 }
 .slider__img {
   position: relative;

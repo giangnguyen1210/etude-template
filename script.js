@@ -92,7 +92,7 @@ $(document).ready(function () {
     // Animate the scroll to the target section
     $('html, body').animate({
       scrollTop: targetOffset
-    }, 0);
+    }, 100);
   });
 
   // highlight menu item

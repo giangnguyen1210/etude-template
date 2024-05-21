@@ -79,12 +79,40 @@ $(document).ready(function () {
   });
 
   // button menuItem 
+  // var menuItems = $('.navbar__menu > li a');
+  // // click vào menuItem 
+  // menuItems.on('click', function (e) {
+  //   console.log($(this).attr("href"));
+  //   $(this).removeClass('active');
+  //   let navItem = $(this).attr("href");
+  //   // console.log(navItem.offsetTop);
+  //   var scrollDiv = navItem.offsetTop;
+  //   window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+  // });
+
+  // Thêm sự kiện click vào các mục menu
   var menuItems = $('.navbar__menu > li a');
-  // click vào menuItem 
+
   menuItems.on('click', function (e) {
-    let navItem = $(this).attr("href");
-    var scrollDiv = navItem.offsetTop;
-    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    let targetId = $(this).attr('href'); // Lấy id của phần tử mục tiêu
+    let targetOffset = $(targetId).offset().top; // Lấy vị trí offset của phần tử mục tiêu
+    let height = $(this).outerHeight();
+    // console.log(height);
+    let sections = $('#home, #journey, #gallery, #product, #fashion, #contact');
+    // console.log(targetOffset, height);
+    menuItems.removeClass('active');
+    sections.each(function () {
+      // console.log($(this).offset().top);
+      if ($(this).offset().top === targetOffset) {
+        console.log("targetId", targetId);
+        $('.navbar__menu > li > a[href="#' + targetId + '"]').addClass('active');
+        $('html, body').animate({ scrollTop: targetOffset }, 50); // Cuộn trang đến vị trí mục tiêu một cách mượt mà
+
+      } else {
+
+      }
+    });
 
   });
   // khi scroll > 100 thì header đổi màu sang maincolor và highlight menu item tương ứng
@@ -111,7 +139,6 @@ $(document).ready(function () {
         $('.navbar__menu > li > a[href="#' + id + '"]').addClass('active');
       }
     });
-    // highlightActiveSection();
   });
 
   // khi hover vào button màu cam bên trái thì show các thẻ tương ứng

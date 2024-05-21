@@ -75,6 +75,7 @@
         transition: transform 0.6s ease-in-out;
         &:hover {
           transform: rotate(360deg);
+          cursor: pointer;
         }
       }
     }

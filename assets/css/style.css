@@ -541,6 +541,7 @@ a {
     line-height: 60px;
   }
   .header__navbar .navbar__menu .ti-arrow-right {
+    color: #ffffff;
     padding-left: 20px;
     padding-top: 1px;
   }
@@ -549,7 +550,8 @@ a {
     flex-direction: column;
     transform: translateY(0);
   }
-  .header__navbar .navbar__menu > li:hover .menu__submenu {
+  .header__navbar .navbar__menu > li i:hover + ul.menu__submenu {
+    display: block;
     position: relative;
     top: 0;
     left: 0;
@@ -619,6 +621,9 @@ a {
     transform: translateY(0);
   }
   .header__navbar .navbar__menu > li:hover .menu__submenu {
+    display: none;
+  }
+  .header__navbar .navbar__menu > li > i:hover .menu__submenu {
     position: relative;
     top: 0;
     left: 0;
@@ -1117,6 +1122,7 @@ a {
 }
 .bestsellers__header--close .close-button:hover {
   transform: rotate(360deg);
+  cursor: pointer;
 }
 .bestsellers__header--text {
   text-align: center;

@@ -270,6 +270,7 @@
           line-height: 60px;
 
           & .ti-arrow-right {
+            color: $colorWhite;
             padding-left: 20px;
             padding-top: 1px;
           }
@@ -278,8 +279,9 @@
             flex-direction: column;
             transform: translateY(0);
           }
-          & > li:hover .menu__submenu {
+          & > li i:hover + ul.menu__submenu {
             // display: none;
+            display: block;
             position: relative;
             top: 0;
             left: 0;
@@ -366,7 +368,9 @@
             transform: translateY(0);
           }
           & > li:hover .menu__submenu {
-            // display: none;
+            display: none;
+          }
+          & > li > i:hover .menu__submenu{
             position: relative;
             top: 0;
             left: 0;

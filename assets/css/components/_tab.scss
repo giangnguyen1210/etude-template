@@ -12,29 +12,31 @@
   &__folder {
     display: flex;
     justify-content: flex-end;
-
+    margin-right: -8px;
     &--right {
       width: 68px;
       height: 60px;
       background-color: $thirdColor;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
       font-size: 20px;
-      padding: 16px 24px;
+      padding: 16px 20px;
       text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .3s, color .3s, background-color .3s;
+      &:hover {
+        transform: translateX(-8px);
+      }
     }
     &--left {
       display: none;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
       padding: 20px 24px;
       font-size: 12px;
       background-color: $mainColor;
       text-transform: uppercase;
-      opacity: 0; /* Bắt đầu với độ mờ là 0 */
-      transition: opacity 1s ease, transform 0.3s ease;
       transform: translateX(100%);
       &.show {
         display: flex;
-        opacity: 1;
         transform: translateX(0);
       }
     }
@@ -68,7 +70,7 @@
       .close-button {
         position: absolute;
         top: 20px;
-        right: 50px;
+        right: 16px;
         border-radius: 50%;
         transition: transform 0.6s ease-in-out;
         &:hover {
@@ -153,7 +155,7 @@
 }
 
 @media only screen and (max-width: 1023px) {
-    .tabs{
-        display: none;
-    }
+  .tabs {
+    display: none;
+  }
 }

@@ -16,6 +16,7 @@
     .navbar {
       &__logo {
         padding-left: 60px;
+        cursor: pointer;
       }
       &__logo img {
         width: 100px;
@@ -102,6 +103,9 @@
       padding: 0 20px;
       font-size: 20px;
       color: $colorWhite;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .list-icon {
       display: none;
@@ -132,9 +136,8 @@
         object-fit: cover;
         transition: transform 1.5s ease-in-out;
       }
-      &-active img{
-        transform: scale(1.1); 
-        
+      &-active img {
+        transform: scale(1.1);
       }
     }
 
@@ -220,6 +223,7 @@
       transition: transform 0.6s ease-in-out;
       &:hover {
         transform: rotate(180deg);
+        cursor: pointer;
       }
     }
     & .footer {
@@ -246,7 +250,7 @@
 /* iPads (portrait) ----------- */
 @media only screen and (max-width: 1023px) {
   .header {
-    position: absolute;
+    position: fixed;
     &__navbar {
       .navbar {
         &__menu {
@@ -257,12 +261,18 @@
           left: 0;
           background-color: $mainColor;
           width: 100%;
+          line-height: 44px;
           padding: 0 50px;
           z-index: 999;
           transform: translateY(-120%);
           transition: transform 1s ease-out, opacity 1s ease-out;
           flex-direction: column;
           line-height: 60px;
+
+          & .ti-arrow-right {
+            padding-left: 20px;
+            padding-top: 1px;
+          }
           &.show-submenu {
             display: flex;
             flex-direction: column;
@@ -277,7 +287,7 @@
           }
 
           & li a {
-            line-height: 60px;
+            line-height: 30px;
           }
         }
         &__icon {
@@ -329,7 +339,7 @@
 /* Smartphones (landscape) ----------- */
 @media only screen and (max-width: 768px) {
   .header {
-    position: absolute;
+    position: fixed;
     &__navbar {
       .navbar {
         &__logo {

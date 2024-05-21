@@ -81,22 +81,19 @@ $(document).ready(function () {
   // button menuItem 
   var menuItems = $('.navbar__menu > li a');
   // click vào menuItem 
-  menuItems.on('click', function () {
-    // đổi màu cho menu được click
-    menuItems.removeClass('active');
-    $(this).addClass('active');
-    // Lấy giá trị của thuộc tính 'href' của menu item được click
-    var target = $(this).attr('href');
-    // Lấy vị trí offset từ đầu của trang đến phần tử mục tiêu
-    var targetOffset = $(target).offset().top;
-    // Animate the scroll to the target section
-    $('html, body').animate({
-      scrollTop: targetOffset
-    }, 100);
-  });
+  menuItems.on('click', function (e) {
+    let navItem = $(this).attr("href");
+    var scrollDiv = navItem.offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
 
-  // highlight menu item
-  function highlightActiveSection() {
+  });
+  // khi scroll > 100 thì header đổi màu sang maincolor và highlight menu item tương ứng
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $(".header").addClass("scroll");
+    } else {
+      $(".header").removeClass("scroll");
+    }
     let sections = $('#home, #journey, #gallery, #product, #fashion, #contact');
     let navLinks = $('.navbar__menu > li  a');
     // Lấy vị trí cuộn hiện tại của trang web
@@ -114,16 +111,7 @@ $(document).ready(function () {
         $('.navbar__menu > li > a[href="#' + id + '"]').addClass('active');
       }
     });
-  }
-
-  // khi scroll > 100 thì header đổi màu sang maincolor và highlight menu item tương ứng
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $(".header").addClass("scroll");
-    } else {
-      $(".header").removeClass("scroll");
-    }
-    highlightActiveSection();
+    // highlightActiveSection();
   });
 
   // khi hover vào button màu cam bên trái thì show các thẻ tương ứng
@@ -163,8 +151,4 @@ $(document).ready(function () {
     $(this).toggleClass("active");
     $(this).next(".menu__submenu").toggleClass("show");
   });
-
-
-
-
 });  

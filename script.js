@@ -106,8 +106,8 @@ $(document).ready(function () {
       // console.log($(this).offset().top);
       if ($(this).offset().top === targetOffset) {
         console.log("targetId", targetId);
-        $('.navbar__menu > li > a[href="#' + targetId + '"]').addClass('active');
         $('html, body').animate({ scrollTop: targetOffset }, 50); // Cuộn trang đến vị trí mục tiêu một cách mượt mà
+        $('.navbar__menu > li > a[href="#' + targetId + '"]').addClass('active');
 
       } else {
 

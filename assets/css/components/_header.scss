@@ -279,6 +279,9 @@
             flex-direction: column;
             transform: translateY(0);
           }
+          & li:hover .menu__submenu{
+            display: none;
+          }
           & > li i:hover + ul.menu__submenu {
             // display: none;
             display: block;
@@ -371,7 +374,7 @@
             display: none;
           }
           & > li > i:hover .menu__submenu{
-            position: relative;
+            // position: relative;
             top: 0;
             left: 0;
             width: 100%;

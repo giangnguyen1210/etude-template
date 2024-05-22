@@ -550,6 +550,9 @@ a {
     flex-direction: column;
     transform: translateY(0);
   }
+  .header__navbar .navbar__menu li:hover .menu__submenu {
+    display: none;
+  }
   .header__navbar .navbar__menu > li i:hover + ul.menu__submenu {
     display: block;
     position: relative;
@@ -624,7 +627,6 @@ a {
     display: none;
   }
   .header__navbar .navbar__menu > li > i:hover .menu__submenu {
-    position: relative;
     top: 0;
     left: 0;
     width: 100%;

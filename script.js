@@ -96,20 +96,16 @@ $(document).ready(function () {
   menuItems.on('click', function (e) {
     e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
     let targetId = $(this).attr('href'); // Lấy id của phần tử mục tiêu
-    let targetOffset = $(targetId).offset().top; // Lấy vị trí offset của phần tử mục tiêu
-    let height = $(this).outerHeight();
-    // console.log(height);
+    let top = $(targetId).offset().top; // Lấy vị trí offset của phần tử mục tiêu
     let sections = $('#home, #journey, #gallery, #product, #fashion, #contact');
-    // console.log(targetOffset, height);
-    menuItems.removeClass('active');
     sections.each(function () {
-      // console.log($(this).offset().top);
-      if ($(this).offset().top === targetOffset) {
-        console.log("targetId", targetId);
-        $('html, body').animate({ scrollTop: targetOffset }, 50); // Cuộn trang đến vị trí mục tiêu một cách mượt mà
+      let offset = $(this).offset().top - 500;
+      let height = $(this).outerHeight();
+      // console.log(offset);
+      if (top >= offset && top < offset + height) {
+        menuItems.removeClass('active');
+        $('html, body').animate({ scrollTop: top }, 50); // Cuộn trang đến vị trí mục tiêu một cách mượt mà
         $('.navbar__menu > li > a[href="#' + targetId + '"]').addClass('active');
-
-      } else {
 
       }
     });
@@ -126,6 +122,7 @@ $(document).ready(function () {
     let navLinks = $('.navbar__menu > li  a');
     // Lấy vị trí cuộn hiện tại của trang web
     let top = $(window).scrollTop();
+    // console.log(top);
     // Duyệt qua từng phần tử mục tiêu
     sections.each(function () {
       // Lấy vị trí offset và chiều cao của phần tử mục tiêu
